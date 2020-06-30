@@ -1,0 +1,333 @@
+/*小螢幕不要kchoo animation,漢堡變直的*/
+/*為何有box-sizing:border-box; icon就會不見呢*/
+/*==========
+base
+===========*/
+
+body {
+  background-color: #A0A0A0;
+}
+.grid {
+  display: grid;
+  width: 100%;
+}
+.nav{
+  gird-area: nav;
+  width: 100%;
+}
+.choo{
+  gird-area: choo;
+  max-width: 100%;
+  margin: auto;
+  font-size: 5em;
+  font-family: 'Fredericka the Great', cursive;
+  transition: transform 1s cubic-bezier(.85,-0.27,.28,.86);
+}
+.choo:hover{
+    transform: translateX(80%) scale(1.1) ;
+    /*color*/
+    background: -webkit-linear-gradient(to right, #FF0080, #FF8C00, #40E0D0);
+    -webkit-background-clip: text;
+    /* -webkit-text-fill-color: transparent; */
+  }
+.search {
+  gird-area: search;
+  background: #fff;
+  margin: 0 auto;
+  width: 50%;
+  height: 90%;
+  border-radius: 25px;
+  /* box-shadow: 1px 0px 10px grey; */
+  text-decoration: none;
+  outline: none;
+  border: none;
+  box-shadow: 0 9px #999;
+  cursor: pointer;
+  font-family: 'Fredericka the Great', cursive;
+}
+.search:active {
+    opacity: 0.8;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
+  .search p {
+    font-size: 3em;
+    font-weight: bold;
+    margin: 0 auto;
+  }
+  .search p:active,
+  .search p:hover {
+      transition: transform .3s ease-in;
+      transform: scale(1.2);
+    }
+.icon{
+  gird-area: icon;
+  
+}
+.footer{
+  gird-area: footer;
+  margin-right: 3em;
+  font-family: 'Fredericka the Great', cursive;
+}
+.footer a {
+    text-decoration: none;
+    color: #232323;
+  }
+.footer a:hover {
+color: firebrick;
+}
+/*==========
+nav flex
+===========*/
+/* #menu {
+  display: flex;  
+} */
+
+/* #menuToggle, */
+.footer{
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: flex-end;
+  /* 如何讓hi在最右邊 */
+}
+
+/*==========
+media Q 
+===========*/
+
+@media (max-width: 1154px) {
+  /* .search {
+   display: none;
+   } */
+   /* .google,
+   .youtube,
+   .share,
+   .facebook,
+   .twitter,
+   .IG,
+   .github,
+   .linkedin {
+    width:50px;
+    height:50px;
+  } */
+}
+
+@media (min-width:700px) {
+.grid{
+  grid-template-columns: auto;
+  grid-template-rows:minmax(200px,0.5fr) 0.5fr 0.3fr 1.5fr 0.3fr;
+  grid-areas:
+  "nav"
+  "choo"
+  "search"
+  "icon"
+  "footer"
+ }
+  
+}
+
+@media (max-width:700px) {
+.grid{
+  grid-template-columns: auto;
+  grid-template-rows: .3fr .25fr .3fr .2fr .1fr;
+  grid-areas:
+  "nav"
+  "choo"
+  "search"
+  "icon"
+  "footer"
+ }
+  #output {
+    font-size: 2em;
+  }  
+  .choo{
+    font-size: 4em;
+  }
+}
+
+/*==========
+icons
+===========*/
+   .spotify,
+   .codepen,
+   .google,
+   .youtube,
+   .share,
+   .facebook,
+   .twitter,
+   .IG,
+   .github,
+   .linkedin {
+    width:60px;
+    height:60px;
+    flex-basis: auto;
+    flex-wrap: wrap;
+    transition: transform .3s;
+    padding: 1em 2em;
+    margin:0 auto;
+  }
+.spotify:hover,
+.codepen:hover,
+.facebook:hover,
+.youtube:hover,
+.twitter:hover,
+.IG:hover,
+.github:hover,
+.linkedin:hover,
+.google:hover,
+.share:hover{
+  transform: rotate(5deg) scale(1.3);  
+}  
+
+/*======flex===============*/
+.icon {
+  display: flex;
+  width: 60%;
+  margin: auto;  /*置中*/
+  justify-content: center;
+  flex-wrap: wrap;
+}
+/*=========
+inside grid
+==============*/
+/*===============
+nav hamburger
+=================*/
+/*nav 可以是grid*/
+/*1 menuToggle外筐*/
+/*1============== 
+決定漢堡NAV的位置
+================*/
+#menuToggle {
+  display: flex; /*但div已是block level辣*/
+/*   flex-direction:  */
+  justify-content: flex-end; /*左到右*/ 
+  position: relative;
+  top: 50px;
+  right: 50px;
+  
+  z-index: 1;
+  /*In web browsers, if you double-click on some text it will be selected/highlighted. 
+  This property can be used to prevent this.*/
+  -webkit-user-select:none;
+  user-select: none; 
+}
+
+/*2 =============
+一些裝飾
+=================*/
+#menuToggle a {
+  text-decoration: none;
+  color: #232323;
+  transition: color .3s ease
+}
+#menuToggle a:hover {
+  color: firebrick;
+}
+/*3===========
+決定XX的位置
+===============*/
+#menuToggle input {  /*inline level*/
+  /*absolute框框會跑右邊*/
+  position: absolute; 
+  top: -10px;
+  /*right:;/*menu translate之後要調*/
+  width: 40px;
+  height: 32px;
+  cursor: pointer;
+  opacity: 0;
+  z-index: 2;
+}
+
+/*4 ===============
+決定漢堡的位置
+=================*/
+#spanGroup span {
+  display: block; /*span是inline*/           background: black;  
+  position:relative;
+  top:-5px;
+  /*right: ; /*menu translate之後要調0*/
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  z-index:1; 
+  border-radius: 3px;
+  
+/*   transform-origin:500 500; */
+  transition: transform .5 cubic-bezier(0.77,0.2,0.05,1.0);
+}
+/*5=============
+決定漢堡的XX
+================*/
+/*5 transform-origin可以check之後再來調*/
+#spanGroup span:first-child{
+  transform-origin:15% 100%;
+}
+
+#spanGroup span:last-child {
+  transform-origin:15% 0%;
+}
+
+#menuToggle input:checked ~#spanGroup span{
+  transform: rotate(45deg);
+}
+#menuToggle input:checked ~#spanGroup span:last-child{
+  transform: rotate(-45deg);
+}
+
+#menuToggle input:checked ~#spanGroup span:nth-child(2){
+  opacity: 0;
+}
+/*6=============
+menu translation
+================*/
+
+#menu {
+  /*border: red solid 1px; /*只是想看範圍*/
+  position:absolute; /*可以讓範圍變小*/
+  /* vertical display */
+  /* width: 150px; 
+  margin: 0 0 20px 0;
+  padding: 20px 0 0 0;
+  padding-top: ;  */
+  /*horizontal display*/
+  display: flex;
+  justify-content: flex-end;
+  width: 300px;
+  margin: -100px 20px 0 20px;
+  padding: 85px 60px 0 20px;
+  
+/*   background: #ededed; */
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  /* to stop flickering of text in safari */
+  /*transform-origin:;*/
+  transform: translate(0%,-100%); /*translate跟()中間不得有空隙*/
+  transition: transform .5s cubic-bezier(0.77,0.2,0.05,1.0);
+  opacity: 1;
+}
+
+#menuToggle input:checked ~ ul{
+  transform: none;
+  opacity: 1;
+}
+
+/*2 一些裝飾*/
+#menu li {
+  padding: 10px 0;
+  font-size: 22px;
+  font-family: 'Fredericka the Great', cursive;
+  color: black;
+  font-weight: 900;
+  font-size: 1em;
+}
+#menu li:hover{
+  color: firebrick;
+}
+#menu a {
+  flex: auto;
+}
+
+
+
+

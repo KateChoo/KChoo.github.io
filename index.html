@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title> K Choo </title>
+    <link rel="stylesheet" href="https://github.com/necolas/normalize.css.git">
+    <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great|Padauk|Tajawal&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     
+  </head>
+  <body>
+    <div class="grid">
+        <!--nav-->
+  <!--       <nav class="nav">
+          <li class="clock"></li>
+          <li>Gmail</li>
+          <li>Photos</li>
+          <li>Articles</li>
+          <li>K-Podcast</li> -->
+        </nav><!--nav-->
+        <!--hamburger nav-->
+        <div class="nav">
+          <div id="menuToggle"><!--relative z:1-->
+  
+            <input type="checkbox"> 
+            <!--absolute z:2-->
+            
+            <div id="spanGroup">
+              <span></span>   <!--relative  z:1-->
+              <span></span>
+              <span></span>
+            </div>
+        
+            <ul id="menu">
+              <a href="https://codepen.io/KookyMonster/full/MWKmELM" target="_blank"><li title="圖文並茂">Photos</li></a>
+              <a href="https://katechoo.github.io/KhatiaBuniatishvili/" target="_blank"><li title="喜愛的鋼琴家">Pieces</li></a>
+  <!--             <a href="" target="_blank" title="建構中"><li>Podcasts</li></a> -->
+              <a href="https://katechoo.github.io/CI_airlines/" target="_blank"><li title="作品集之一">Portfolio</li></a>
+            </ul>
+          </div>
+        </div>
+        <!--choo-->
+        <div class="choo" title="Let's choo choo !">K Choo</div><!--choo-->
+        <!--search-->
+  
+        <button class="search" type="button"><p id="output" title="按我">Today, I feel...</p></button> <!--search-->
+  
+               <!--icon-->
+               <div class="icon">
+                <!--github--> 
+                  <div class="github">
+                    <a href="https://github.com/KateChoo" target="_blank">
+                      <svg  id="github" viewBox="0 0 800 800">
+                      <path d="M400 139c144 0 260 116 260 260 0 115-75 213-178 247-9 3-17-2-17-13v-71c0-35-18-48-18-48 57-6 119-28 119-128 0-44-27-70-27-70s14-29-2-69c0 0-22-7-72 27-42-12-88-12-130 0-50-34-72-27-72-27-16 40-2 69-2 69s-27 26-27 70c0 100 62 122 119 128 0 0-14 10-17 35-15 7-53 18-76-22 0 0-13-25-39-27 0 0-26 0-2 16 0 0 17 8 29 38 0 0 16 51 88 35v44c0 11-9 16-18 13-103-34-178-132-178-247 0-144 116-260 260-260z"/>
+                      </svg>
+                    </a>
+                   </div>
+                <!--codepen--> 
+                  <div class="codepen">
+                    <a href="" target="_blank">   
+                    <svg id="codepen" viewBox="0 0 800 800">
+            <path d="M140 482V320q0-10 10-18l238-158q12-8 24 0l238 158q9 6 10 19v158q0 10-10 19L412 656q-12 8-24 0L150 497q-9-6-10-15zm282-278v104l97 65 78-52zm-44 104V204L203 321l78 52zm-193 54v75l56-37zm193 234V492l-97-65-78 52zm22-143l79-53-79-53-79 53zm22 143l175-117-78-52-97 64v105zm193-159v-75l-56 38z"/>
+          </svg>
+                    </a>
+                  </div>
+                  <!--linkedin-->
+                  <div class="linkedin">
+                    <a > <!-- 網址網址  -->
+      
+                      <svg id="linkedin" viewBox="0 0 800 800">
+                      <path d="M268 629h-97V319h97zm157 0h-97V319h93v42h1q31-50 93-50 114 0 114 133v185h-96V466q0-70-49-70-59 0-59 69z" />
+                      <circle cx="219" cy="220" r="56"/>
+                      </svg>
+                    </a>
+                </div>
+                <!--twitter-->
+                 <div class="twitter">
+                   <a > <!-- 網址網址  -->
+                      <svg id="twitter" viewBox="0 0 800 800">
+                      <path d="M679 239s-21 34-55 57c7 156-107 329-314 329-103 0-169-50-169-50s81 17 163-45c-83-5-103-77-103-77s23 6 50-2c-93-23-89-110-89-110s23 14 50 14c-84-65-34-148-34-148s76 107 228 116c-22-121 117-177 188-101 37-6 71-27 71-27s-12 41-49 61c30-2 63-17 63-17z"/>
+                     </svg>
+                   </a>
+                 </div>
+                <!--IG-->
+                 <div class="IG">
+                   <a >  <!-- 網址網址  -->
+                            
+                      <svg id="instagram" viewBox="0 0 800 800">
+                      <path d="M150 400c0-119 0-166 42-208s88-42 208-42 166 0 208 42 42 89 42 208 0 166-42 208-88 42-208 42-166 0-208-42-42-89-42-208zm455 0c0-114 0-148-29-176-29-29-62-29-176-29s-148 0-176 29c-29 29-29 62-29 176s0 148 29 176c29 29 62 29 176 29s148 0 176-29c29-29 29-62 29-176zM400 272a128 128 0 1 1 0 256 128 128 0 0 1 0-256zm0 211c46 0 83-37 83-83s-37-83-83-83-83 37-83 83 37 83 83 83zm163-216c0 16-13 30-30 30-16 0-30-14-30-30 0-17 14-30 30-30 17 0 30 13 30 30z"/>
+                    </svg>
+                   <a>
+                  </div>
+                <!--spotify-->
+                  <div class="spotify">
+                    <a href="" target="_blank">
+                      <svg id="spotify" viewBox="0 0 800 800">
+                        <path d="M400 140c144 0 260 117 260 260S543 660 400 660 140 543 140 400s117-260 260-260zm113 354c-68-43-153-51-252-29-20 4-16 37 9 31 91-20 166-12 228 25 18 11 34-15 15-27zm32-76c-81-50-197-64-292-35-23 7-16 46 15 37 82-24 184-13 256 31 21 13 43-19 21-33zm7-48c34 19 52-23 26-39-96-57-254-63-340-35-30 10-17 55 15 45 75-23 215-19 299 29z"/>
+                      </svg>
+                    </a>
+                  </div>
+                  
+                <!--facebook-->
+                <div class="facebook">
+                  <a> <!-- 網址網址  -->
+                     <svg id="facebook" viewBox="0 0 800 800">
+                      <path d="M445 643h-90V419h-75v-87h75v-64q0-55 32-86 30-29 80-29 28 0 67 3v78h-47q-42 0-42 38v60h86l-11 87h-75v224z" />
+                    </svg>
+                  </a>
+                </div>
+                <!--google-->       
+              <div class="google">
+                <a > 
+                      
+                  <svg id="google" viewBox="0 0 800 800">
+            <path d="M651 363c23.37 168.396-79.705 297-246 297-144 0-260-116-260-260s116-260 260-260c70 0 130 26 175 68l-71 68c-19-19-53-40-104-40-89 0-161 73-161 164s72 164 161 164c104 0 142-74 148-112H405v-89h246z" />
+          </svg>
+                </a>
+              </div>
+              <!--youtube-->
+              <div class="youtube">
+                <a>
+                    <svg id="youtube" viewBox="0 0 800 800">
+            <path d="M400 224c144 0 201 2 224 25 17 17 26 52.125 26 151s-9 134-26 151c-23 23-80 25-224 25s-201-2-224-25c-17-17-26-52.125-26-151s9-134 26-151c23-23 80-25 224-25zm-52 100v141l135-70z" />
+          </svg>
+                </a>
+              </div>
+                <!--share-->
+      <!--          <div class="share">
+                 <a>
+                 </a>
+               </div> -->
+              </div><!--icon-->
+        <!--footer-->
+        <div class="footer">
+          <span>
+            <a href=mailto: twodoor1993@gmail.com?subject=Hi K,>
+            2020 &copy;Kate Choo
+            <br>Playing code is like playing piano.
+            </a>
+          </span>
+          
+          
+        </div><!--footer-->
+        
+      </div> <!--grid-->
+      <script src="main.js"></script>
+  </body>
+</html>
