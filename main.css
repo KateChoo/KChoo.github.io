@@ -114,13 +114,16 @@ media Q
 @media (min-width:500px) {
   .grid{
     grid-template-columns: auto;
-    grid-template-rows:minmax(50px, .5fr) .5fr .2fr 1.5fr .1fr;
+    grid-template-rows:.5fr .5fr .2fr 1.5fr .1fr;
     grid-areas:
     "nav"
     "choo"
     "search"
     "icon"
     "footer"
+   }
+   #menu {
+     width: 250px;
    }
     
   }
