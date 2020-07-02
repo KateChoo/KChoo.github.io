@@ -111,11 +111,23 @@ media Q
     height:50px;
   } */
 }
-
+@media (min-width:500px) {
+  .grid{
+    grid-template-columns: auto;
+    grid-template-rows:minmax(50px, .5fr) .5fr .2fr 1.5fr .1fr;
+    grid-areas:
+    "nav"
+    "choo"
+    "search"
+    "icon"
+    "footer"
+   }
+    
+  }
 @media (min-width:700px) {
 .grid{
   grid-template-columns: auto;
-  grid-template-rows:minmax(200px, .5fr) .5fr .3fr 1.5fr .0fr;
+  grid-template-rows:minmax(200px, .5fr) .5fr .3fr 1.5fr .1fr;
   grid-areas:
   "nav"
   "choo"
@@ -129,7 +141,7 @@ media Q
 @media (max-width:700px) {
 .grid{
   grid-template-columns: auto;
-  grid-template-rows: .3fr .25fr .3fr .2fr .0fr;
+  grid-template-rows: .3fr .25fr .15fr .2fr .1fr;
   grid-areas:
   "nav"
   "choo"
@@ -301,14 +313,14 @@ menu translation
   list-style-type: none;
   -webkit-font-smoothing: antialiased;
   /* to stop flickering of text in safari */
-  /*transform-origin:;*/
+  /*-webkit-transform-origin:;*/
   transform: translate(0%,-100%); /*translate跟()中間不得有空隙*/
   transition: transform .5s cubic-bezier(0.77,0.2,0.05,1.0);
   opacity: 1;
 }
 
 #menuToggle input:checked ~ ul{
-  transform: none;
+  -webkit-transform: none;
   opacity: 1;
 }
 
