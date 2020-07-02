@@ -141,7 +141,7 @@ media Q
   
 }
 
-@media (max-width:700px) {
+@media (max-width:900px) {
 .grid{
   grid-template-columns: auto;
   grid-template-rows: .3fr .25fr .15fr .2fr .1fr;
