@@ -111,7 +111,7 @@ media Q
     height:50px;
   } */
 }
-@media (min-width:500px) {
+/* @media (max-width:800px) {
   .grid{
     grid-template-columns: auto;
     grid-template-rows:.5fr .5fr .2fr 1.5fr .1fr;
@@ -126,7 +126,7 @@ media Q
      width: 250px;
    }
     
-  }
+  } */
 @media (min-width:700px) {
 .grid{
   grid-template-columns: auto;
@@ -157,6 +157,9 @@ media Q
   }  
   .choo{
     font-size: 4em;
+  }
+  #menu {
+    width: 250px;
   }
 }
 
