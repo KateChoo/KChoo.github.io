@@ -1,8 +1,8 @@
 /*小螢幕不要kchoo animation,漢堡變直的*/
 /*為何有box-sizing:border-box; icon就會不見呢*/
-/*==========
-base
-===========*/
+/*============================
+           base
+=============================*/
 
 body {
   background-color: #A0A0A0;
@@ -58,8 +58,11 @@ body {
   .search p:active,
   .search p:hover {
       transition: transform .3s ease-in;
-      transform: scale(1.2);
+      transform: scale(1.1);
     }
+  #output {
+    font-size: 2em;
+  }  
 .icon{
   gird-area: icon;
   
@@ -91,58 +94,44 @@ nav flex
   /* 如何讓hi在最右邊 */
 }
 
-/*==========
-media Q 
-===========*/
+  /*==================================
+                media Q 
+  ======================================*/
 
-@media (max-width: 1154px) {
-  /* .search {
-   display: none;
-   } */
-   /* .google,
-   .youtube,
-   .share,
-   .facebook,
-   .twitter,
-   .IG,
-   .github,
-   .linkedin {
-    width:50px;
-    height:50px;
-  } */
-}
 @media (min-width: 320px) and (max-width: 568px) {
-  .grid{
-   
-    grid-template-columns: auto;
-    grid-template-rows: .1fr  .12fr .1fr .2fr .1fr;
-    grid-areas:
-    "nav"
-    "choo"
-    "search"
-    "icon"
-    "footer"
+   .nav{
+     height: 5em;
    }
+   .search {
+     height: 3em;
+   }
+   #output {
+    font-size: 1em;
+  } 
    #spanGroup span {
-   
     position:relative;
-    right: -30px;
+    right: -40px;
    }
    #menuToggle input {  /*inline level*/
     position: absolute; 
-    right: -30px;
+    right: -40px;
    }
-   /* #menu{
-    justify-content: space-evenly;
-  } */
    .choo{
-    font-size: 2.5em; 
+    font-size: 3em; 
   }
-  .search p {
-    font-size: 2em;
+  .icon {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  #menu {
+    margin: -100px 0 0 0;
+    padding: 85px 0 0 0;
+  }
+  #menu li {
+    font-size: 2em
   }
 }
-@media (min-width:700px) {
+@media (min-width:950px) {
 .grid{
   grid-template-columns: auto;
   grid-template-rows:minmax(200px, .5fr) .5fr .3fr 1.5fr .1fr;
@@ -153,13 +142,16 @@ media Q
   "icon"
   "footer"
  }
-  
+ #menu {
+  margin: -100px 20px 0 20px;
+  padding: 85px 60px 0 20px;
+} 
 }
 
-@media (min-width: 568px) and (max-width: 700px) {
+@media (min-width: 568px) and (max-width: 950px) {
 .grid{
   grid-template-columns: auto;
-  grid-template-rows: .3fr .25fr .15fr .2fr .1fr;
+  grid-template-rows: minmax(100px, .2fr) .35fr .2fr .5fr .1fr;
   grid-areas:
   "nav"
   "choo"
@@ -167,59 +159,62 @@ media Q
   "icon"
   "footer"
  }
-  #output {
-    font-size: 2em;
-  }  
   .choo{
     font-size: 4em;
   }
+
   #menu {
     width: 250px;
+    margin: -100px 20px 0 20px;
+    padding: 85px 60px 0 20px;
+  }
+  #menu li {
+    font-size: 2em
   }
 }
 
-/*==========
-icons
-===========*/
-   .spotify,
-   .codepen,
-   .google,
-   .youtube,
-   .share,
-   .facebook,
-   .twitter,
-   .IG,
-   .github,
-   .linkedin {
-    width:60px;
-    height:60px;
-    flex-basis: auto;
-    flex-wrap: wrap;
-    transition: transform .3s;
-    padding: 1em 2em;
-    margin:0 auto;
-  }
-.spotify:hover,
-.codepen:hover,
-.facebook:hover,
-.youtube:hover,
-.twitter:hover,
-.IG:hover,
-.github:hover,
-.linkedin:hover,
-.google:hover,
-.share:hover{
-  transform: rotate(5deg) scale(1.3);  
-}  
+/*=====================================
+                icons
+=======================================*/
+    .spotify,
+    .codepen,
+    .google,
+    .youtube,
+    .share,
+    .facebook,
+    .twitter,
+    .IG,
+    .github,
+    .linkedin {
+      width:60px;
+      height:60px;
+      flex-basis: auto;
+      flex-wrap: wrap;
+      transition: transform .3s;
+      padding: 1em 2em;
+      margin:0 auto;
+    }
+    .spotify:hover,
+    .codepen:hover,
+    .facebook:hover,
+    .youtube:hover,
+    .twitter:hover,
+    .IG:hover,
+    .github:hover,
+    .linkedin:hover,
+    .google:hover,
+    .share:hover{
+      transform: rotate(5deg) scale(1.3);  
+    }  
+     /*======flex===============*/
+     .icon {
+      display: flex;
+      width: 60%;
+      margin: auto;  /*置中*/
+      justify-content: center;
+      flex-wrap: wrap;
+    }
 
-/*======flex===============*/
-.icon {
-  display: flex;
-  width: 60%;
-  margin: auto;  /*置中*/
-  justify-content: center;
-  flex-wrap: wrap;
-}
 /*=========
 inside grid
 ==============*/
@@ -325,10 +320,10 @@ menu translation
   padding-top: ;  */
   /*horizontal display*/
   display: flex;
-  justify-content: flex-end;
+  /* justify-content: flex-end; */
   width: 300px;
-  margin: -100px 20px 0 20px;
-  padding: 85px 60px 0 20px;
+  /* margin: -100px 20px 0 20px;
+  padding: 85px 60px 0 20px; */
   
 /*   background: #ededed; */
   list-style-type: none;
