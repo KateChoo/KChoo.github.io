@@ -15,6 +15,9 @@ body {
   gird-area: nav;
   width: 100%;
 }
+marquee {
+  mragin: 0 0 1px 0;
+}
 .choo{
   gird-area: choo;
   max-width: 100%;
@@ -103,10 +106,11 @@ nav flex
      height: 5em;
    }
    .search {
-     height: 3em;
+     height: 5em;
+     width: 50%;
    }
    #output {
-    font-size: 1em;
+    font-size: 1.5em;
   } 
    #spanGroup span {
     position:relative;
@@ -176,16 +180,17 @@ nav flex
 /*=====================================
                 icons
 =======================================*/
-    .spotify,
-    .codepen,
-    .google,
-    .youtube,
-    .share,
-    .facebook,
-    .twitter,
-    .IG,
-    .github,
-    .linkedin {
+    #heart,
+    #spotify,
+    #codepen,
+    #google,
+    #youtube,
+    #share,
+    #facebook,
+    #twitter,
+    #IG,
+    #github,
+    #linkedin {
       width:60px;
       height:60px;
       flex-basis: auto;
@@ -194,16 +199,22 @@ nav flex
       padding: 1em 2em;
       margin:0 auto;
     }
-    .spotify:hover,
-    .codepen:hover,
-    .facebook:hover,
-    .youtube:hover,
-    .twitter:hover,
-    .IG:hover,
-    .github:hover,
-    .linkedin:hover,
-    .google:hover,
-    .share:hover{
+    #heart{
+      width: 40px;
+      height: 40px;
+      margin: .5em 0 0 0;
+    }
+    #heart:hover,
+    #spotify:hover,
+    #codepen:hover,
+    #facebook:hover,
+    #youtube:hover,
+    #twitter:hover,
+    #IG:hover,
+    #github:hover,
+    #linkedin:hover,
+    #google:hover,
+    #share:hover{
       transform: rotate(5deg) scale(1.3);  
     }  
      /*======flex===============*/

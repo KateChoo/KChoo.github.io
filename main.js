@@ -15,18 +15,18 @@ const randomColor = ()=> {
 //---
 const tarot = [
     'The Fool 愚人',
-    'The Magician 魔術師',
-    'The High Priestess女教皇',
+    'The Magician <br> 魔術師',
+    'The High Priestess <br> 女教皇',
     'The Empress 女皇',
     'The Emperor 皇帝',
-    'The Hierophant教皇',
+    'The Hierophant <br> 教皇',
     'The Lovers 戀人',
     'The Chariot 戰車',
     'Strength 力量',
     'The Hermit 隱士',
-    'Wheel of Fortune 命運之輪',
+    'Wheel of Fortune <br> 命運之輪',
     'Justice 正義',
-    'The Hanged Man 懸吊者',
+    'The Hanged Man <br> 懸吊者',
     'Death 死亡',
     'Temperance 節制',
     'The Devil 魔鬼',
@@ -80,6 +80,11 @@ const icons = [
 // });
   
 //think about function, loop
+  const heart = document.getElementById('heart'); //icons[0]
+  heart.addEventListener ('mouseover', () => {
+  heart.style.fill = randomColor();
+  });
+
   const codepen = document.getElementById('codepen'); //icons[0]
     codepen.addEventListener ('mouseover', () => {
     codepen.style.fill = randomColor();
@@ -100,9 +105,9 @@ const icons = [
   twitter.style.fill = randomColor();
 });
 
-const instagram = document.getElementById('instagram'); //icons[2]
-  instagram.addEventListener ('mouseover', () => {
-  instagram.style.fill = randomColor();
+const IG = document.getElementById('IG'); //icons[2]
+  IG.addEventListener ('mouseover', () => {
+  IG.style.fill = randomColor();
 });
 
 const facebook = document.getElementById('facebook'); //icons[3]
