@@ -107,7 +107,7 @@ nav flex
    }
    .search {
      height: 5em;
-     width: 50%;
+     width: 80%;
    }
    #output {
     font-size: 1.5em;
@@ -255,6 +255,7 @@ nav hamburger
 /*2 =============
 一些裝飾
 =================*/
+
 #menuToggle a {
   text-decoration: none;
   color: #232323;
@@ -331,6 +332,7 @@ menu translation
   padding-top: ;  */
   /*horizontal display*/
   display: flex;
+  justify-content: flex-end;/*是你讓作品集跟漢堡更近了*/
   /* justify-content: flex-end; */
   width: 300px;
   /* margin: -100px 20px 0 20px;
@@ -353,19 +355,16 @@ menu translation
 
 /*2 一些裝飾*/
 #menu li {
-  padding: 10px 0;
-  font-size: 22px;
+  padding: 8px .5em;
   font-family: 'Fredericka the Great', cursive;
   color: black;
   font-weight: 900;
-  font-size: 1em;
+  font-size: 1.5em;
 }
 #menu li:hover{
   color: firebrick;
 }
-#menu a {
-  flex: auto;
-}
+
 
 
 
