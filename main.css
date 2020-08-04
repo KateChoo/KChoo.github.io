@@ -3,9 +3,19 @@
 /*============================
            base
 =============================*/
-
+:root {
+  --color-primary:#F5F5F5;
+  --color-secodary: #232323; 
+  --color-hover: #25ed13;
+  --color-tooltipsBackground: #3A8AFD;
+}
+html,
 body {
-  background-color: #A0A0A0;
+  height: 100%;
+  background: #fafbfc  url('mountains.jpg') no-repeat;
+  background-blend-mode: multiply;
+  background-size: cover;
+  animation: sunrise 5s linear forwards;
 }
 .grid {
   display: grid;
@@ -25,6 +35,7 @@ marquee {
   font-size: 5em;
   font-family: 'Fredericka the Great', cursive;
   transition: transform 1s cubic-bezier(.85,-0.27,.28,.86);
+  color: var(--color-primary);
 }
 .choo:hover{
     transform: translateX(80%) scale(1.1) ;
@@ -35,7 +46,7 @@ marquee {
   }
 .search {
   gird-area: search;
-  background: #fff;
+  background: var(--color-primary);
   margin: 0 auto;
   width: 50%;
   height: 90%;
@@ -44,13 +55,13 @@ marquee {
   text-decoration: none;
   outline: none;
   border: none;
-  box-shadow: 0 9px #999;
+  box-shadow: 0 9px #e8e8e8;
   cursor: pointer;
   font-family: 'Fredericka the Great', cursive;
 }
 .search:active {
     opacity: 0.8;
-    box-shadow: 0 5px #666;
+    box-shadow: 0 5px rgb(25, 38, 80);
     transform: translateY(4px);
   }
   .search p {
@@ -68,7 +79,6 @@ marquee {
   }  
 .icon{
   gird-area: icon;
-  
 }
 .footer{
   gird-area: footer;
@@ -77,10 +87,10 @@ marquee {
 }
 .footer a {
     text-decoration: none;
-    color: #232323;
+    color: var(--color-primary);
   }
 .footer a:hover {
-color: firebrick;
+color: var(--color-hover);
 }
 /*==========
 nav flex
@@ -258,11 +268,11 @@ nav hamburger
 
 #menuToggle a {
   text-decoration: none;
-  color: #232323;
+  color: var(--color-primary);
   transition: color .3s ease
 }
 #menuToggle a:hover {
-  color: firebrick;
+  color: var(--color-hover);
 }
 /*3===========
 決定XX的位置
@@ -283,7 +293,8 @@ nav hamburger
 決定漢堡的位置
 =================*/
 #spanGroup span {
-  display: block; /*span是inline*/           background: black;  
+  display: block; /*span是inline*/           
+  background: var(--color-hover);  
   position:relative;
   top:-5px;
   /*right: ; /*menu translate之後要調0*/
@@ -357,12 +368,12 @@ menu translation
 #menu li {
   padding: 8px .5em;
   font-family: 'Fredericka the Great', cursive;
-  color: black;
+  color: var(--color-primary);
   font-weight: 900;
   font-size: 1.5em;
 }
 #menu li:hover{
-  color: firebrick;
+  color: var(--color-hover);
 }
 
 /*============================
@@ -412,11 +423,11 @@ menu translation
   transition-delay: .2s;
 }
 .tool::after {
-  background: #000;
+  border: 1px solid var(--color-primary);
   border-radius: 25px;
 /*   bottom: -650%; */
 /*   right: 75%; */
-  color: #fff;
+  color: var(--color-hover);
 /*   width: 3em; */
 /*   padding: 1px; */
 /*   margin: 5px; */
@@ -428,6 +439,42 @@ menu translation
 .tool:hover::after,
 .tool:focus::after {
   transition-delay: 0s;
+}
+
+@keyframes sunrise {
+  0% {
+    background: #fafbfc url('mountains.jpg') no-repeat;
+  }
+  10%{
+    background: #f2f7fd url('mountains.jpg') no-repeat;
+  }
+  20% {
+    background: #e4f0ff url('mountains.jpg') no-repeat;
+  }
+  30%{
+    background: #cee2ff url('mountains.jpg') no-repeat;
+  }
+  40% {
+    background: #afd0ff url('mountains.jpg') no-repeat;
+  }
+  50%{
+    background: #a0c7fd url('mountains.jpg') no-repeat;
+  }
+  60%{
+    background: #97c2ff url('mountains.jpg') no-repeat;
+  }
+  70% {
+    background: #7cb1fc url('mountains.jpg') no-repeat;
+  }
+  80%{
+    background: #66a6ff url('mountains.jpg') no-repeat;
+  }
+  90%{
+    background: #5099ff url('mountains.jpg') no-repeat;
+  }
+  100% {
+    background: #3A8AFD url('mountains.jpg') no-repeat;
+  }
 }
 
 
