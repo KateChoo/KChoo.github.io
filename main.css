@@ -9,13 +9,17 @@
   --color-hover: #25ed13;
   --color-tooltipsBackground: #3A8AFD;
 }
-html,
-body {
+html{
   height: 100%;
-  background: #fafbfc  url("mountains.jpg") no-repeat;
+  background: #fafbfc  url("mountains.jpg") no-repeat center center fixed;
   background-blend-mode: multiply;
-  background-size: cover;
   animation: sunrise 5s linear forwards;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 100%;
+  overflow: hidden;
 }
 .grid {
   display: grid;
