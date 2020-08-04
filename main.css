@@ -1,3 +1,5 @@
+/* 2020/08/04超大螢幕 照片不夠寬露一截 width:100%?? */
+/* 2020/08/04stop choo:hover*/
 /*小螢幕不要kchoo animation,漢堡變直的*/
 /*為何有box-sizing:border-box; icon就會不見呢*/
 /*============================
@@ -18,8 +20,8 @@ html{
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  height: 100%;
-  overflow: hidden;
+  height: 100%;  /*for android 照片太短露一截*/
+  overflow: hidden;  /*for android 照片太短露一截*/
 }
 .grid {
   display: grid;
@@ -29,9 +31,9 @@ html{
   gird-area: nav;
   width: 100%;
 }
-marquee {
-  mragin: 0 0 1px 0;
-}
+/* marquee {
+  margin: 0 0 1px 0;
+} */
 .choo{
   gird-area: choo;
   max-width: 100%;
@@ -39,24 +41,26 @@ marquee {
   font-size: 5em;
   font-family: 'Fredericka the Great', cursive;
   transition: transform 1s cubic-bezier(.85,-0.27,.28,.86);
+}
+a {
+  text-decoration: none;
   color: var(--color-primary);
 }
-.choo:hover{
-    transform: translateX(80%) scale(1.1) ;
+/* .choo:hover{ */
+    /* transform: translateX(80%) scale(1.1) ; */
     /*color*/
-    background: -webkit-linear-gradient(to right, #FF0080, #FF8C00, #40E0D0);
-    -webkit-background-clip: text;
+    /* background: -webkit-linear-gradient(to right, #FF0080, #FF8C00, #40E0D0); */
+    /* -webkit-background-clip: text; */
     /* -webkit-text-fill-color: transparent; */
-  }
+  /* } */
 .search {
   gird-area: search;
   background: var(--color-primary);
   margin: 0 auto;
   width: 50%;
-  height: 90%;
+  height: 85%;
   border-radius: 25px;
   /* box-shadow: 1px 0px 10px grey; */
-  text-decoration: none;
   outline: none;
   border: none;
   box-shadow: 0 9px #e8e8e8;
@@ -90,7 +94,6 @@ marquee {
   font-family: 'Fredericka the Great', cursive;
 }
 .footer a {
-    text-decoration: none;
     color: var(--color-primary);
   }
 .footer a:hover {
@@ -271,7 +274,6 @@ nav hamburger
 =================*/
 
 #menuToggle a {
-  text-decoration: none;
   color: var(--color-primary);
   transition: color .3s ease
 }
@@ -383,7 +385,8 @@ menu translation
 /*============================
           Tooltips
 =============================*/
-.tool {
+.tool,
+.sunrise {
   cursor: pointer;
   position: relative;
   outline: none;
@@ -400,7 +403,7 @@ menu translation
   opacity: 0;
   z-index: -100;
 }
- 
+/* .sunrise:hover::after, */
 .tool:hover::before,
 .tool:focus::before,
 .tool:hover::after,
@@ -444,6 +447,18 @@ menu translation
 .tool:focus::after {
   transition-delay: 0s;
 }
+/* .sunrise::after{
+  content: attr(sunrise);
+  font-size: .1em;
+  transform: scale(.6) translateY(90%);
+  transition: all .65s cubic-bezier(.85, -0.18, .31, 1.26), opacity .65s .5s;
+  position: fixed;
+  top: 40%;
+  right: 0%;
+  opacity: 0;
+  z-index: -100;
+  transform: scale(1) translateY(0);
+} */
 
 @keyframes sunrise {
   0% {
