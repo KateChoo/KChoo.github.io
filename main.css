@@ -12,7 +12,7 @@
 html,
 body {
   height: 100%;
-  background: #fafbfc  url('mountains.jpg') no-repeat;
+  background: #fafbfc  url("mountains.jpg") no-repeat;
   background-blend-mode: multiply;
   background-size: cover;
   animation: sunrise 5s linear forwards;
@@ -443,37 +443,37 @@ menu translation
 
 @keyframes sunrise {
   0% {
-    background: #fafbfc url('mountains.jpg') no-repeat;
+    background: #fafbfc url("mountains.jpg") no-repeat;
   }
   10%{
-    background: #f2f7fd url('mountains.jpg') no-repeat;
+    background: #f2f7fd url("mountains.jpg") no-repeat;
   }
   20% {
-    background: #e4f0ff url('mountains.jpg') no-repeat;
+    background: #e4f0ff url("mountains.jpg") no-repeat;
   }
   30%{
-    background: #cee2ff url('mountains.jpg') no-repeat;
+    background: #cee2ff url("mountains.jpg") no-repeat;
   }
   40% {
-    background: #afd0ff url('mountains.jpg') no-repeat;
+    background: #afd0ff url("mountains.jpg") no-repeat;
   }
   50%{
-    background: #a0c7fd url('mountains.jpg') no-repeat;
+    background: #a0c7fd url("mountains.jpg") no-repeat;
   }
   60%{
-    background: #97c2ff url('mountains.jpg') no-repeat;
+    background: #97c2ff url("mountains.jpg") no-repeat;
   }
   70% {
-    background: #7cb1fc url('mountains.jpg') no-repeat;
+    background: #7cb1fc url("mountains.jpg") no-repeat;
   }
   80%{
-    background: #66a6ff url('mountains.jpg') no-repeat;
+    background: #66a6ff url("mountains.jpg") no-repeat;
   }
   90%{
-    background: #5099ff url('mountains.jpg') no-repeat;
+    background: #5099ff url("mountains.jpg") no-repeat;
   }
   100% {
-    background: #3A8AFD url('mountains.jpg') no-repeat;
+    background: #3A8AFD url("mountains.jpg") no-repeat;
   }
 }
 
