@@ -1,4 +1,6 @@
-/* 2020/08/04超大螢幕 照片不夠寬露一截 width:100%?? */
+/* 2020/08/04超大螢幕 照片不夠寬露一截 width:100%??
+   2020/08/11解決寬螢幕問題
+*/
 /* 2020/08/04stop choo:hover*/
 /*小螢幕不要kchoo animation,漢堡變直的*/
 /*為何有box-sizing:border-box; icon就會不見呢*/
@@ -459,40 +461,41 @@ menu translation
   z-index: -100;
   transform: scale(1) translateY(0);
 } */
-
-@keyframes sunrise {
-  0% {
-    background: #fafbfc url("mountains.jpg") no-repeat;
-  }
-  10%{
-    background: #f2f7fd url("mountains.jpg") no-repeat;
-  }
-  20% {
-    background: #e4f0ff url("mountains.jpg") no-repeat;
-  }
-  30%{
-    background: #cee2ff url("mountains.jpg") no-repeat;
-  }
-  40% {
-    background: #afd0ff url("mountains.jpg") no-repeat;
-  }
-  50%{
-    background: #a0c7fd url("mountains.jpg") no-repeat;
-  }
-  60%{
-    background: #97c2ff url("mountains.jpg") no-repeat;
-  }
-  70% {
-    background: #7cb1fc url("mountains.jpg") no-repeat;
-  }
-  80%{
-    background: #66a6ff url("mountains.jpg") no-repeat;
-  }
-  90%{
-    background: #5099ff url("mountains.jpg") no-repeat;
-  }
-  100% {
-    background: #3A8AFD url("mountains.jpg") no-repeat;
+@media (max-width: 1400px) {
+  @keyframes sunrise {
+    0% {
+      background: #fafbfc url("mountains.jpg") no-repeat;
+    }
+    10%{
+      background: #f2f7fd url("mountains.jpg") no-repeat;
+    }
+    20% {
+      background: #e4f0ff url("mountains.jpg") no-repeat;
+    }
+    30%{
+      background: #cee2ff url("mountains.jpg") no-repeat;
+    }
+    40% {
+      background: #afd0ff url("mountains.jpg") no-repeat;
+    }
+    50%{
+      background: #a0c7fd url("mountains.jpg") no-repeat;
+    }
+    60%{
+      background: #97c2ff url("mountains.jpg") no-repeat;
+    }
+    70% {
+      background: #7cb1fc url("mountains.jpg") no-repeat;
+    }
+    80%{
+      background: #66a6ff url("mountains.jpg") no-repeat;
+    }
+    90%{
+      background: #5099ff url("mountains.jpg") no-repeat;
+    }
+    100% {
+      background: #3A8AFD url("mountains.jpg") no-repeat;
+    }
   }
 }
 

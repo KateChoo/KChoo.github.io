@@ -126,10 +126,10 @@ const google = document.getElementById('google'); //icons[6]
   google.addEventListener ('mouseover', () => {
   google.style.fill = randomColor();
 });
-const share = document.getElementById('share'); //icons[7]
-  share.addEventListener ('mouseover', () => {
-  share.style.fill = randomColor();
-});
+// const share = document.getElementById('share'); //icons[7]
+//   share.addEventListener ('mouseover', () => {
+//   share.style.fill = randomColor();
+// });
 
 
 
