@@ -90,13 +90,15 @@ a {
 .icon{
   gird-area: icon;
 }
-.footer{
+.footer span{
   gird-area: footer;
   margin-right: 3em;
+  
   font-family: 'Fredericka the Great', cursive;
 }
 .footer a {
     color: var(--color-primary);
+    /* padding-bottom: 1em; */
   }
 .footer a:hover {
 color: var(--color-hover);
