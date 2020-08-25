@@ -85,6 +85,7 @@ html{
   margin: auto;
   font-size: 5em;
   font-family: 'Fredericka the Great', cursive;
+  transition: 1s transform;
   /* transition: transform 1s cubic-bezier(.85,-0.27,.28,.86); */
 }
 
@@ -92,13 +93,15 @@ a {
   text-decoration: none;
   color: var(--color-primary);
 }
-/* .choo:hover{ */
+.choo:hover,
+.sunrise:hover{
+  color: var(--color-hover);
     /* transform: translateX(80%) scale(1.1) ; */
     /*color*/
     /* background: -webkit-linear-gradient(to right, #FF0080, #FF8C00, #40E0D0); */
     /* -webkit-background-clip: text; */
     /* -webkit-text-fill-color: transparent; */
-  /* } */
+  }
 .search {
   gird-area: search;
   background: var(--color-primary);
