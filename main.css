@@ -1,62 +1,397 @@
-/* 2020/08/04超大螢幕 照片不夠寬露一截 width:100%??
-   2020/08/11解決寬螢幕問題
-*/
-/* 2020/08/04stop choo:hover*/
-/*小螢幕不要kchoo animation,漢堡變直的*/
-/*為何有box-sizing:border-box; icon就會不見呢*/
-/*============================
-           base
-=============================*/
-:root {
-  --color-primary:#F5F5F5;
-  --color-secodary: #232323; 
-  --color-hover: #25ed13;
-  --color-tooltipsBackground: #3A8AFD;
+@charset "UTF-8";
+/*====================
+    NAV .nav(for fullscreen: top, bottom, left, right)
+=====================*/
+.section__nav {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: nav;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
+
+.nav {
+  position: fixed;
+  background: #395883 url(https://cdn.pixabay.com/photo/2017/09/14/22/42/milky-way-2750627_1280.jpg);
+  background-blend-mode: multiply;
+  background-position: center;
+  /* Center the image */
+  background-repeat: no-repeat;
+  /* Do not repeat the image */
+  background-size: cover;
+  /* Resize the background image to cover the entire container */
+  /* color: var(--color-secodary); */
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+  -webkit-transition: -webkit-transform 250ms cubic-bezier(0.5, 0, 0.5, 1);
+  transition: -webkit-transform 250ms cubic-bezier(0.5, 0, 0.5, 1);
+  transition: transform 250ms cubic-bezier(0.5, 0, 0.5, 1);
+  transition: transform 250ms cubic-bezier(0.5, 0, 0.5, 1), -webkit-transform 250ms cubic-bezier(0.5, 0, 0.5, 1);
+}
+
+.nav__link {
+  color: var(--clr-light);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-h3);
+  /* text-decoration: none; */
+}
+
+.nav__link:hover {
+  color: var(--clr-hover);
+}
+
+.nav-toggle {
+  padding: 1em;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  position: fixed;
+  /*後又改為fixed, fixed好不會隨螢幕變動*/
+  right: 1em;
+  top: 1em;
+  z-index: 1000;
+  outline: none;
+}
+
+/*=====================
+    Hamburger 1:44:38
+    ===================*/
+.hamburger {
+  display: block;
+  position: relative;
+  background: var(--clr-hover);
+  width: 3em;
+  height: 3px;
+  border-radius: 1em;
+  margin: 4px;
+  /*3 spans instead of psuedo classes */
+  -webkit-transition: -webkit-transform 250ms ease-in-out;
+  transition: -webkit-transform 250ms ease-in-out;
+  transition: transform 250ms ease-in-out;
+  transition: transform 250ms ease-in-out, -webkit-transform 250ms ease-in-out;
+}
+
+/*======================
+            with js
+    =======================*/
+.nav-open .nav {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
+.nav-open .nav-toggle {
+  position: fixed;
+  /*nav滑進來後漢堡不動*/
+}
+
+/*with ham transition*/
+.nav-open .hbg1 {
+  -webkit-transform: rotate(-45deg) translateX(2px) translateY(11px);
+          transform: rotate(-45deg) translateX(2px) translateY(11px);
+}
+
+.nav-open .hbg2 {
+  -webkit-transform: rotate(45deg) translateX(18px) translateY(3px);
+          transform: rotate(45deg) translateX(18px) translateY(3px);
+}
+
+.nav-open .hbg3 {
+  -webkit-transform: rotate(90deg) translateY(1px);
+          transform: rotate(90deg) translateY(1px);
+  height: 6px;
+  width: 3em;
+}
+
+/*======================
+        
+    whole choogl layout
+    ======================*/
+.grid {
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: "nav" "choogl";
+}
+
+@media (min-width: 200px) and (max-width: 789px) {
+  .grid {
+    -ms-grid-rows: .2fr 1fr;
+        grid-template-rows: .2fr 1fr;
+        grid-template-areas: "nav" "choogl";
+  }
+  .sunrise{
+      font-size: var(--fs-h1);
+  }
+  .search{
+      height: 85%;
+      width: 60%;
+  }
+  .nav__list {
+    list-style: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 100%;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    /* margin-top: 5em; */
+    margin: 1em 0 0 0;
+    padding: 0;
+  }
+}
+
+@media (min-width: 789px) {
+  .grid {
+    -ms-grid-rows: 2.2fr 3fr;
+        grid-template-rows: 2.2fr 3fr;
+        grid-template-areas: "nav" "choogl";
+  }
+
+  .nav__list {
+    list-style: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 100%;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    /* margin-top: 5em; */
+    margin: 0;
+    padding: 0;
+  }
+}
+
+/*============================
+    layout
+    =============================*/
+.section__choogl {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: choogl;
+  max-width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.choo {
+  /* grid-area: choo; */
+  max-width: 100%;
+  margin: .1em auto;
+  /* margin: auto; */
+  font-size: 5em;
+  font-family: 'Fredericka the Great', cursive;
+  -webkit-transition: 1s -webkit-transform;
+  transition: 1s -webkit-transform;
+  transition: 1s transform;
+  transition: 1s transform, 1s -webkit-transform;
+  /* transition: transform 1s cubic-bezier(.85,-0.27,.28,.86); */
+}
+
+.choo:hover,
+.sunrise:hover {
+  color: var(--clr-hover);
+  /* transform: translateX(80%) scale(1.1) ; */
+  /*color*/
+  /* background: -webkit-linear-gradient(to right, #FF0080, #FF8C00, #40E0D0); */
+  /* -webkit-background-clip: text; */
+  /* -webkit-text-fill-color: transparent; */
+}
+
+.search {
+  /* grid-area: search; */
+  background: var(--clr-light);
+  margin: 1em auto;
+  width: 50%;
+  height: 85%;
+  border-radius: 25px;
+  /* box-shadow: 1px 0px 10px grey; */
+  outline: none;
+  border: none;
+  -webkit-box-shadow: 0 9px #e8e8e8;
+          box-shadow: 0 9px #e8e8e8;
+  cursor: pointer;
+  font-family: 'Fredericka the Great', cursive;
+}
+
+.search:active {
+  opacity: 0.8;
+  -webkit-box-shadow: 0 5px #192650;
+          box-shadow: 0 5px #192650;
+  -webkit-transform: translateY(4px);
+          transform: translateY(4px);
+}
+
+.search p {
+  font-size: 3em;
+  font-weight: bold;
+  margin: .3em auto;
+}
+
+.search p:active,
+.search p:hover {
+  -webkit-transition: -webkit-transform .3s ease-in;
+  transition: -webkit-transform .3s ease-in;
+  transition: transform .3s ease-in;
+  transition: transform .3s ease-in, -webkit-transform .3s ease-in;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+#output {
+  font-size: 2em;
+}
+
+.icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 60%;
+  margin: 1em auto;
+  /*置中*/
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  font-family: 'Fredericka the Great', cursive;
+}
+
+.footer a {
+  color: var(--clr-light);
+  /* padding-bottom: 1em; */
+}
+
+.footer a:hover {
+  color: var(--clr-hover);
+}
+
+/*============================
+    style
+    =============================*/
 html,
-body{
+body {
   max-width: 100vw;
   margin: 0 auto;
-  background: #fafbfc url("mountains.jpg") no-repeat center center fixed;
+  background: #fafbfc url("mountains.jpg") no-repeat center;
   background-blend-mode: multiply;
-  animation: sunrise 5s linear forwards;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
+  -webkit-animation: sunrise 5s linear forwards;
+          animation: sunrise 5s linear forwards;
   background-size: cover;
-  height: 100%;  /*for android 照片太短露一截*/
-  overflow: hidden;  /*for android 照片太短露一截*/
+  height: 100%;
+  /*for android 照片太短露一截*/
+  overflow: auto;  
+  /*for android 照片太短露一截*/
 }
+
 @media (max-width: 1400px) {
-  @keyframes sunrise {
+  @-webkit-keyframes sunrise {
     0% {
       background: #fafbfc url("mountains.jpg") no-repeat;
     }
-    20%{
+    20% {
       background: #f2f7fd url("mountains.jpg") no-repeat;
     }
     30% {
       background: #e4f0ff url("mountains.jpg") no-repeat;
     }
-    50%{
+    50% {
       background: #cee2ff url("mountains.jpg") no-repeat;
     }
     60% {
       background: #afd0ff url("mountains.jpg") no-repeat;
     }
-    70%{
+    70% {
       background: #a0c7fd url("mountains.jpg") no-repeat;
     }
-    75%{
+    75% {
       background: #97c2ff url("mountains.jpg") no-repeat;
     }
     80% {
       background: #7cb1fc url("mountains.jpg") no-repeat;
     }
-    85%{
+    85% {
       background: #66a6ff url("mountains.jpg") no-repeat;
     }
-    90%{
+    90% {
+      background: #5099ff url("mountains.jpg") no-repeat;
+    }
+    100% {
+      background: #3A8AFD url("mountains.jpg") no-repeat;
+    }
+  }
+  @keyframes sunrise {
+    0% {
+      background: #fafbfc url("mountains.jpg") no-repeat;
+    }
+    20% {
+      background: #f2f7fd url("mountains.jpg") no-repeat;
+    }
+    30% {
+      background: #e4f0ff url("mountains.jpg") no-repeat;
+    }
+    50% {
+      background: #cee2ff url("mountains.jpg") no-repeat;
+    }
+    60% {
+      background: #afd0ff url("mountains.jpg") no-repeat;
+    }
+    70% {
+      background: #a0c7fd url("mountains.jpg") no-repeat;
+    }
+    75% {
+      background: #97c2ff url("mountains.jpg") no-repeat;
+    }
+    80% {
+      background: #7cb1fc url("mountains.jpg") no-repeat;
+    }
+    85% {
+      background: #66a6ff url("mountains.jpg") no-repeat;
+    }
+    90% {
       background: #5099ff url("mountains.jpg") no-repeat;
     }
     100% {
@@ -65,491 +400,70 @@ body{
   }
 }
 
-@media (min-width: 1350px){
-      .sunrise {
-        color: var(--color-hover);
-      }
+@media (min-width: 1350px) {
+  .sunrise {
+    color: var(--clr-hover);
+  }
 }
 
-.grid {
-  display: grid;
-  width: 100%;
+#heart,
+#book,
+#music,
+#mail,
+#github,
+#codepen,
+#linkedin {
+  color: var(--clr-dark);
+  -webkit-transition: -webkit-transform .3s;
+  transition: -webkit-transform .3s;
+  transition: transform .3s;
+  transition: transform .3s, -webkit-transform .3s;
+  padding: .3em;
 }
-.nav{
-  gird-area: nav;
-  width: 100%;
+
+#heart:hover,
+#book:hover,
+#codepen:hover,
+#music:hover,
+#mail:hover,
+#github:hover,
+#linkedin:hover {
+  -webkit-transform: rotate(5deg) scale(1.15);
+          transform: rotate(5deg) scale(1.15);
 }
-/* marquee {
-  margin: 0 0 1px 0;
-} */
-.choo{
-  gird-area: choo;
-  max-width: 100%;
-  margin: auto;
-  font-size: 5em;
-  font-family: 'Fredericka the Great', cursive;
-  transition: 1s transform;
-  /* transition: transform 1s cubic-bezier(.85,-0.27,.28,.86); */
+
+/*============================
+    base
+    =============================*/
+*,
+*::after,
+*::before {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 a {
   text-decoration: none;
-  color: var(--color-primary);
-}
-.choo:hover,
-.sunrise:hover{
-  color: var(--color-hover);
-    /* transform: translateX(80%) scale(1.1) ; */
-    /*color*/
-    /* background: -webkit-linear-gradient(to right, #FF0080, #FF8C00, #40E0D0); */
-    /* -webkit-background-clip: text; */
-    /* -webkit-text-fill-color: transparent; */
-  }
-.search {
-  gird-area: search;
-  background: var(--color-primary);
-  margin: 0 auto;
-  width: 50%;
-  height: 85%;
-  border-radius: 25px;
-  /* box-shadow: 1px 0px 10px grey; */
-  outline: none;
-  border: none;
-  box-shadow: 0 9px #e8e8e8;
-  cursor: pointer;
-  font-family: 'Fredericka the Great', cursive;
-}
-.search:active {
-    opacity: 0.8;
-    box-shadow: 0 5px rgb(25, 38, 80);
-    transform: translateY(4px);
-  }
-  .search p {
-    font-size: 3em;
-    font-weight: bold;
-    margin: 0 auto;
-  }
-  .search p:active,
-  .search p:hover {
-      transition: transform .3s ease-in;
-      transform: scale(1.1);
-    }
-  #output {
-    font-size: 2em;
-  }  
-.icon{
-  gird-area: icon;
-}
-.footer span{
-  gird-area: footer;
-  margin-right: 3em;
-  
-  font-family: 'Fredericka the Great', cursive;
-}
-.footer a {
-    color: var(--color-primary);
-    /* padding-bottom: 1em; */
-  }
-.footer a:hover {
-color: var(--color-hover);
-}
-/*==========
-nav flex
-===========*/
-/* #menu {
-  display: flex;  
-} */
-
-/* #menuToggle, */
-.footer{
-  display: flex;
-  /* flex-direction: column; */
-  justify-content: flex-end;
-  /* 如何讓hi在最右邊 */
+  color: var(--clr-light);
 }
 
-  /*==================================
-                media Q 
-  ======================================*/
+:root {
+  --clr-light:#F5F5F5;
+  --clr-dark: #232323;
+  --clr-hover: #25ed13;
+  --color-tooltipsBackground: #3A8AFD;
+  --fs-h1: 3rem;
+  --fs-h2: 2.25rem;
+  --fs-h3: 1.25rem;
+  --fs-body: 1rem;
+}
 
-@media (min-width: 320px) and (max-width: 568px) {
-   .nav{
-     height: 5em;
-   }
-   .search {
-     height: 5em;
-     width: 80%;
-   }
-   #output {
-    font-size: 1.5em;
-  } 
-   #spanGroup span {
-    position:relative;
-    right: -40px;
-   }
-   #menuToggle input {  /*inline level*/
-    position: absolute; 
-    right: -40px;
-   }
-   .choo{
-    font-size: 3em; 
-  }
-  .icon {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  #menu {
-    margin: -100px 0 0 0;
-    padding: 85px 0 0 0;
-  }
-  #menu li {
-    font-size: 2em
+@media (min-width: 800px) {
+  :root {
+    --fs-h1: 4.5rem;
+    --fs-h2: 3.75rem;
+    --fs-h3: 1.5rem;
+    --fs-body: 1.125rem;
   }
 }
-@media (min-width:950px) {
-.grid{
-  grid-template-columns: auto;
-  grid-template-rows:minmax(200px, .5fr) .5fr .3fr 1.5fr .1fr;
-  grid-areas:
-  "nav"
-  "choo"
-  "search"
-  "icon"
-  "footer"
- }
- #menu {
-  margin: -100px 20px 0 20px;
-  padding: 85px 60px 0 20px;
-} 
-}
-
-@media (min-width: 568px) and (max-width: 950px) {
-.grid{
-  grid-template-columns: auto;
-  grid-template-rows: minmax(100px, .2fr) .35fr .2fr .5fr .1fr;
-  grid-areas:
-  "nav"
-  "choo"
-  "search"
-  "icon"
-  "footer"
- }
-  .choo{
-    font-size: 4em;
-  }
-
-  #menu {
-    width: 250px;
-    margin: -100px 20px 0 20px;
-    padding: 85px 60px 0 20px;
-  }
-  #menu li {
-    font-size: 2em
-  }
-}
-
-/*=====================================
-                icons
-=======================================*/
-    #heart,
-    #spotify,
-    #codepen,
-    #google,
-    #youtube,
-    #share,
-    #facebook,
-    #twitter,
-    #IG,
-    #github,
-    #linkedin {
-      width:60px;
-      height:60px;
-      flex-basis: auto;
-      flex-wrap: wrap;
-      transition: transform .3s;
-      padding: 1em 2em;
-      margin:0 auto;
-    }
-    #heart{
-      width: 40px;
-      height: 40px;
-      margin: .5em 0 0 0;
-    }
-    #heart:hover,
-    #spotify:hover,
-    #codepen:hover,
-    #facebook:hover,
-    #youtube:hover,
-    #twitter:hover,
-    #IG:hover,
-    #github:hover,
-    #linkedin:hover,
-    #google:hover,
-    #share:hover{
-      transform: rotate(5deg) scale(1.3);  
-    }  
-     /*======flex===============*/
-     .icon {
-      display: flex;
-      width: 60%;
-      margin: auto;  /*置中*/
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-/*=========
-inside grid
-==============*/
-/*===============
-nav hamburger
-=================*/
-/*nav 可以是grid*/
-/*1 menuToggle外筐*/
-/*1============== 
-決定漢堡NAV的位置
-================*/
-#menuToggle {
-  display: flex; /*但div已是block level辣*/
-/*   flex-direction:  */
-  justify-content: flex-end; /*左到右*/ 
-  position: relative;
-  top: 50px;
-  right: 50px;
-  
-  z-index: 1;
-  /*In web browsers, if you double-click on some text it will be selected/highlighted. 
-  This property can be used to prevent this.*/
-  -webkit-user-select:none;
-  user-select: none; 
-}
-
-/*2 =============
-一些裝飾
-=================*/
-
-#menuToggle a {
-  color: var(--color-primary);
-  transition: color .3s ease
-}
-#menuToggle a:hover {
-  color: var(--color-hover);
-}
-/*3===========
-決定XX的位置
-===============*/
-#menuToggle input {  /*inline level*/
-  /*absolute框框會跑右邊*/
-  position: absolute; 
-  top: -10px;
-  /*right:;/*menu translate之後要調*/
-  width: 40px;
-  height: 32px;
-  cursor: pointer;
-  opacity: 0;
-  z-index: 2;
-}
-
-/*4 ===============
-決定漢堡的位置
-=================*/
-#spanGroup span {
-  display: block; /*span是inline*/           
-  background: var(--color-hover);  
-  position:relative;
-  top:-5px;
-  /*right: ; /*menu translate之後要調0*/
-  width: 33px;
-  height: 4px;
-  margin-bottom: 5px;
-  z-index:1; 
-  border-radius: 3px;
-  
-/*   transform-origin:500 500; */
-  transition: transform .5 cubic-bezier(0.77,0.2,0.05,1.0);
-}
-/*5=============
-決定漢堡的XX
-================*/
-/*5 transform-origin可以check之後再來調*/
-#spanGroup span:first-child{
-  transform-origin:15% 100%;
-}
-
-#spanGroup span:last-child {
-  transform-origin:15% 0%;
-}
-
-#menuToggle input:checked ~#spanGroup span{
-  transform: rotate(45deg);
-}
-#menuToggle input:checked ~#spanGroup span:last-child{
-  transform: rotate(-45deg);
-}
-
-#menuToggle input:checked ~#spanGroup span:nth-child(2){
-  opacity: 0;
-}
-/*6=============
-menu translation
-================*/
-
-#menu {
-  /*border: red solid 1px; /*只是想看範圍*/
-  position:absolute; /*可以讓範圍變小*/
-  /* vertical display */
-  /* width: 150px; 
-  margin: 0 0 20px 0;
-  padding: 20px 0 0 0;
-  padding-top: ;  */
-  /*horizontal display*/
-  display: flex;
-  justify-content: flex-end;/*是你讓作品集跟漢堡更近了*/
-  /* justify-content: flex-end; */
-  width: 300px;
-  /* margin: -100px 20px 0 20px;
-  padding: 85px 60px 0 20px; */
-  
-/*   background: #ededed; */
-  list-style-type: none;
-  -webkit-font-smoothing: antialiased;
-  /* to stop flickering of text in safari */
-  /*-webkit-transform-origin:;*/
-  transform: translate(0%,-100%); /*translate跟()中間不得有空隙*/
-  transition: transform .5s cubic-bezier(0.77,0.2,0.05,1.0);
-  opacity: 1;
-}
-
-#menuToggle input:checked ~ ul{
-  -webkit-transform: none;
-  opacity: 1;
-}
-
-/*2 一些裝飾*/
-#menu li {
-  padding: 8px .5em;
-  font-family: 'Fredericka the Great', cursive;
-  color: var(--color-primary);
-  font-weight: 900;
-  font-size: 1.5em;
-}
-#menu li:hover{
-  color: var(--color-hover);
-}
-
-/*============================
-          Tooltips
-=============================*/
-.tool,
-.sunrise {
-  cursor: pointer;
-  position: relative;
-  outline: none;
-}
-
-.tool::before,
-.tool::after {
-  position: fixed;
-  top: 0;
-  right: 11%;
-/*   bottom: 100%; */
-/*   right: 200%; */
-/*   left: 100%; */
-  opacity: 0;
-  z-index: -100;
-}
-/* .sunrise:hover::after, */
-.tool:hover::before,
-.tool:focus::before,
-.tool:hover::after,
-.tool:focus::after {
-  opacity: 1;
-  z-index: 100;
-  /*最後加上*/
-  transform: scale(1) translateY(0);
-} 
-
-.tool::before {
-  content: "";
-/*   border-style:solid; */
-/*   border-width: 1em .75em 0 .75em; */
-/*   border-color: transparent transparent firebrick transparent; */
-/*   bottom: 100%; */
-/*   margin-left: 0em; */
-  transform: scale(.6) translateY(90%);
-  transition: all .65s cubic-bezier(.85, -0.18, .31, 1.26), opacity .65s .5s;
-}
-
-.tool:hover::before,
-.tool:focus::before {
-  transition-delay: .1s;
-}
-.tool::after {
-  /* border: 1px solid var(--color-primary); */
-  /* border-radius: 25px; */
-/*   bottom: -650%; */
-/*   right: 75%; */
-  color: var(--color-hover);
-/*   width: 3em; */
-/*   padding: 1px; */
-/*   margin: 5px; */
-  /*use data-tip attribute as the value of the content property*/
-  content: attr(data-tip);
-  transform: scale(.6) translateY(50%);
-  transition: all .65s cubic-bezier(.84, -.18, .31, 1.26) .2s;
-}
-.tool:hover::after,
-.tool:focus::after {
-  transition-delay: 0s;
-}
-/* .sunrise::after{
-  content: attr(sunrise);
-  font-size: .1em;
-  transform: scale(.6) translateY(90%);
-  transition: all .65s cubic-bezier(.85, -0.18, .31, 1.26), opacity .65s .5s;
-  position: fixed;
-  top: 40%;
-  right: 0%;
-  opacity: 0;
-  z-index: -100;
-  transform: scale(1) translateY(0);
-} */
-/* @media (max-width: 1400px) {
-  @keyframes sunrise {
-    0% {
-      background: url("https://cdn.pixabay.com/photo/2017/03/15/13/27/rough-horn-2146181_1280.jpg") no-repeat center center fixed;
-    }
-    5%{
-      background: #b6d6fc url("https://cdn.pixabay.com/photo/2017/03/15/13/27/rough-horn-2146181_1280.jpg") no-repeat center center fixed;
-    }
-    10% {
-      background: #8dbcf5 url("https://cdn.pixabay.com/photo/2017/03/15/13/27/rough-horn-2146181_1280.jpg") no-repeat center center fixed;
-    }
-    15%{
-      background: #6a9fee url("https://cdn.pixabay.com/photo/2017/03/15/13/27/rough-horn-2146181_1280.jpg") no-repeat center center fixed;
-    }
-    25% {
-      background: #5092ee url("https://cdn.pixabay.com/photo/2017/03/15/13/27/rough-horn-2146181_1280.jpg") no-repeat center center fixed;
-    }
-    35%{
-      background: #397cdb url("https://cdn.pixabay.com/photo/2017/03/15/13/27/rough-horn-2146181_1280.jpg") no-repeat center center fixed;
-    }
-    45%{
-      background: #2268cb url("https://cdn.pixabay.com/photo/2017/03/15/13/27/rough-horn-2146181_1280.jpg") no-repeat center center fixed;
-    }
-    55% {
-      background: #1757b1 url("https://cdn.pixabay.com/photo/2017/03/15/13/27/rough-horn-2146181_1280.jpg") no-repeat center center fixed;
-    }
-    65%{
-      background: #0f4ca2 url("https://cdn.pixabay.com/photo/2017/03/15/13/27/rough-horn-2146181_1280.jpg") no-repeat center center fixed;
-    }
-    90%{
-      background: #0847a0 url("https://cdn.pixabay.com/photo/2017/03/15/13/27/rough-horn-2146181_1280.jpg") no-repeat center center fixed;
-    }
-    100% {
-      background: #024096 url("https://cdn.pixabay.com/photo/2017/03/15/13/27/rough-horn-2146181_1280.jpg") no-repeat center center fixed;
-    }
-  }
-} */
-
-
-
+/*# sourceMappingURL=what.css.map */

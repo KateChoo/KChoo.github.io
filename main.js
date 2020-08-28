@@ -47,29 +47,26 @@ function print(message){
     // const message = randomTarot(output);
     output.innerHTML = message;
 }
-const btn = document.getElementsByTagName('button')[0];
+const btn = document.getElementById('search');
 btn.addEventListener ('click', () => {
   var message = randomTarot(output);
   btn.style.color = randomColor();
   print(message)
 });
+/*===========================*/ 
 
-// const btn = document.getElementsByTagName('button')[0];
-// btn.addEventListener ('click', () => {
-//   let p = document.createElement('p');
-//   p.textContent = randomTarot().value;
-//   btn.appendChild(p);
-//   p.value ='';
-// })
-const icons = [
-    'youtube',
-    'twitter',      
-    'instagram',
-    'facebook',
-    'github',
-    'google',
-    'share'   
-]
+const navToggle = document.querySelector('.nav-toggle');
+const navLinks = document.querySelectorAll('.nav__link');
+
+navToggle.addEventListener('click', ()=>{
+  document.body.classList.toggle('nav-open'); //how is nav-open within the html structure?
+})
+
+navLinks.forEach(link => {
+  link.addEventListener('click', ()=>{
+    document.body.classList.remove('nav-open');
+  })
+})
 //drop redundant
 // const icon = document.getElementById('icons[i]');
 // // let icon = document.getElementById('icons')[i];
@@ -80,50 +77,35 @@ const icons = [
 // });
   
 //think about function, loop
-  const heart = document.getElementById('heart'); //icons[0]
-  heart.addEventListener ('mouseover', () => {
-  heart.style.fill = randomColor();
-  });
-
-  const codepen = document.getElementById('codepen'); //icons[0]
-    codepen.addEventListener ('mouseover', () => {
-    codepen.style.fill = randomColor();
-  });
-
-  const spotify = document.getElementById('spotify'); //icons[0]
-    spotify.addEventListener ('mouseover', () => {
-    spotify.style.fill = randomColor();
-  });
-
-  const youtube = document.getElementById('youtube'); //icons[0]
-  youtube.addEventListener ('mouseover', () => {
-  youtube.style.fill = randomColor();
+const book = document.getElementById('book'); //icons[0]
+book.addEventListener ('mouseover', () => {
+book.style.color = randomColor();
+});
+const music = document.getElementById('music'); //icons[0]
+music.addEventListener ('mouseover', () => {
+music.style.color = randomColor();
+});
+const heart = document.getElementById('heart'); //icons[0]
+heart.addEventListener ('mouseover', () => {
+heart.style.color = randomColor();
 });
 
-  const twitter = document.getElementById('twitter'); //icons[1]
-  twitter.addEventListener ('mouseover', () => {
-  twitter.style.fill = randomColor();
+const codepen = document.getElementById('codepen'); //icons[0]
+codepen.addEventListener ('mouseover', () => {
+codepen.style.color = randomColor();
 });
 
-const IG = document.getElementById('IG'); //icons[2]
-  IG.addEventListener ('mouseover', () => {
-  IG.style.fill = randomColor();
-});
-
-const facebook = document.getElementById('facebook'); //icons[3]
-  facebook.addEventListener ('mouseover', () => {
-  facebook.style.fill = randomColor();
-});
 const github = document.getElementById('github'); //icons[4]
-  github.addEventListener ('mouseover', () => {
-  github.style.fill = randomColor();
+github.addEventListener ('mouseover', () => {
+github.style.color = randomColor();
 });
 const linkedin = document.getElementById('linkedin'); //icons[5]
-  linkedin.addEventListener ('mouseover', () => {
-  linkedin.style.fill = randomColor();
+linkedin.addEventListener ('mouseover', () => {
+linkedin.style.color = randomColor();
 });
-const google = document.getElementById('google'); //icons[6]
-  google.addEventListener ('mouseover', () => {
-  google.style.fill = randomColor();
+const mail = document.getElementById('mail'); //icons[5]
+mail.addEventListener ('mouseover', () => {
+mail.style.color = randomColor();
 });
+
 
