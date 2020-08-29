@@ -81,6 +81,10 @@ const book = document.getElementById('book'); //icons[0]
 book.addEventListener ('mouseover', () => {
 book.style.color = randomColor();
 });
+const travel = document.getElementById('travel'); //icons[0]
+travel.addEventListener ('mouseover', () => {
+travel.style.color = randomColor();
+});
 const music = document.getElementById('music'); //icons[0]
 music.addEventListener ('mouseover', () => {
 music.style.color = randomColor();
