@@ -1,3 +1,19 @@
+/*===========================*/ 
+
+const navToggle = document.querySelector('.nav-toggle');
+const navLinks = document.querySelectorAll('.nav__link');
+
+navToggle.addEventListener('click', ()=>{
+  document.body.classList.toggle('nav-open'); //how is nav-open within the html structure?
+})
+
+navLinks.forEach(link => {
+  link.addEventListener('click', ()=>{
+    document.body.classList.remove('nav-open');
+  })
+})
+/*================================*/
+
 var red;
 var green;
 var blue;
@@ -53,20 +69,7 @@ btn.addEventListener ('click', () => {
   btn.style.color = randomColor();
   print(message)
 });
-/*===========================*/ 
 
-const navToggle = document.querySelector('.nav-toggle');
-const navLinks = document.querySelectorAll('.nav__link');
-
-navToggle.addEventListener('click', ()=>{
-  document.body.classList.toggle('nav-open'); //how is nav-open within the html structure?
-})
-
-navLinks.forEach(link => {
-  link.addEventListener('click', ()=>{
-    document.body.classList.remove('nav-open');
-  })
-})
 //drop redundant
 // const icon = document.getElementById('icons[i]');
 // // let icon = document.getElementById('icons')[i];
