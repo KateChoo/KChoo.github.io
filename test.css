@@ -1,6 +1,9 @@
 @charset "UTF-8";
 /*====================
     NAV .nav(for fullscreen: top, bottom, left, right)
+    .nav__item > a (padding: 3em 0;)  才不會連到其他網站
+    nav(overflow:auto)
+    section choogl normal
 =====================*/
 .section__nav {
   -ms-grid-row: 1;
@@ -36,6 +39,7 @@
   transition: -webkit-transform 250ms cubic-bezier(0.5, 0, 0.5, 1);
   transition: transform 250ms cubic-bezier(0.5, 0, 0.5, 1);
   transition: transform 250ms cubic-bezier(0.5, 0, 0.5, 1), -webkit-transform 250ms cubic-bezier(0.5, 0, 0.5, 1);
+  overflow: auto;
 }
 
 .nav__link {
@@ -70,7 +74,7 @@
 }
 
 .nav__item > a {
-  padding: 5em 0;
+  padding: 3em 0;
 }
 
 .nav__item:nth-child(1)::before {
@@ -215,8 +219,11 @@
 @media (min-width: 789px) {
   .grid {
     -ms-grid-rows: 2.2fr 5fr;
-    grid-template-rows: 2fr 3fr;
+    grid-template-rows: 1fr 1.6fr;
         grid-template-areas: "nav" "choogl";
+  }
+  .section__choogl {
+    gap: 1em;
   }
   .nav__list {
     list-style: none;
@@ -420,37 +427,81 @@ body {
   }
   @keyframes sunrise {
     0% {
-      background: #fafbfc url("mountains.jpg") no-repeat;
+      background: #fafbfc url("mountains.jpg");
+      background-blend-mode: multiply;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
     }
     20% {
-      background: #f2f7fd url("mountains.jpg") no-repeat;
+      background: #f2f7fd url("mountains.jpg");
+      background-blend-mode: multiply;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
     }
     30% {
-      background: #e4f0ff url("mountains.jpg") no-repeat;
+      background: #e4f0ff url("mountains.jpg");
+      background-blend-mode: multiply;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
     }
     50% {
-      background: #cee2ff url("mountains.jpg") no-repeat;
+      background: #cee2ff url("mountains.jpg");
+      background-blend-mode: multiply;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
     }
     60% {
-      background: #afd0ff url("mountains.jpg") no-repeat;
+      background: #afd0ff url("mountains.jpg");
+      background-blend-mode: multiply;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
     }
     70% {
-      background: #a0c7fd url("mountains.jpg") no-repeat;
+      background: #a0c7fd url("mountains.jpg");
+      background-blend-mode: multiply;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
     }
     75% {
-      background: #97c2ff url("mountains.jpg") no-repeat;
+      background: #97c2ff url("mountains.jpg");
+      background-blend-mode: multiply;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
     }
     80% {
-      background: #7cb1fc url("mountains.jpg") no-repeat;
+      background: #7cb1fc url("mountains.jpg");
+      background-blend-mode: multiply;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
     }
     85% {
-      background: #66a6ff url("mountains.jpg") no-repeat;
+      background: #66a6ff url("mountains.jpg");
+      background-blend-mode: multiply;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
     }
     90% {
-      background: #5099ff url("mountains.jpg") no-repeat;
+      background: #5099ff url("mountains.jpg");
+      background-blend-mode: multiply;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
     }
     100% {
-      background: #3A8AFD url("mountains.jpg") no-repeat;
+      background: #3A8AFD url("mountains.jpg");
+      background-blend-mode: multiply;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
     }
   }
 }
@@ -523,4 +574,4 @@ a {
     --fs-body: 1.125rem;
   }
 }
-/*# sourceMappingURL=what.css.map */
+/*# sourceMappingURL=test.css.map */

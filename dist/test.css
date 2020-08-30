@@ -79,7 +79,7 @@
 
 .nav__item:nth-child(1)::before {
   display: block;
-  content: '';
+  content: "";
   background-image: url("1.png");
   background-size: cover;
   width: 10em;
@@ -87,7 +87,7 @@
 }
 
 .nav__item:nth-child(2)::before {
-  content: '';
+  content: "";
   display: block;
   background-image: url("2.png");
   background-size: cover;
@@ -96,7 +96,7 @@
 }
 
 .nav__item:nth-child(3)::before {
-  content: '';
+  content: "";
   display: block;
   background-image: url("3.png");
   background-size: cover;
@@ -105,7 +105,7 @@
 }
 
 .nav__item:nth-child(4)::before {
-  content: '';
+  content: "";
   display: block;
   background-image: url("4.png");
   background-size: cover;
@@ -114,7 +114,7 @@
 }
 
 .nav__item:nth-child(5)::before {
-  content: '';
+  content: "";
   display: block;
   background-image: url("5.png");
   background-size: cover;
@@ -172,28 +172,31 @@
 }
 
 /*======================
-        
+
     whole choogl layout
     ======================*/
 .grid {
   display: -ms-grid;
   display: grid;
-      grid-template-areas: "nav" "choogl";
+  grid-template-areas: "nav" "choogl";
 }
 
 @media (min-width: 200px) and (max-width: 789px) {
   .grid {
-    -ms-grid-rows: .2fr 1fr;
-    grid-template-rows: .2fr 1fr;
-        grid-template-areas: "nav" "choogl";
+    -ms-grid-rows: 0.2fr 1fr;
+    grid-template-rows: 0.2fr 1fr;
+    grid-template-areas: "nav" "choogl";
   }
+
   .sunrise {
     font-size: var(--fs-h1);
   }
+
   .search {
     height: 85%;
     width: 60%;
   }
+
   .nav__list {
     list-style: none;
     display: -webkit-box;
@@ -215,16 +218,17 @@
     padding: 0;
   }
 }
-
 @media (min-width: 789px) {
   .grid {
     -ms-grid-rows: 2.2fr 5fr;
     grid-template-rows: 1fr 1.6fr;
-        grid-template-areas: "nav" "choogl";
+    grid-template-areas: "nav" "choogl";
   }
+
   .section__choogl {
     gap: 1em;
   }
+
   .nav__list {
     list-style: none;
     display: -webkit-box;
@@ -246,7 +250,6 @@
     padding: 0;
   }
 }
-
 /*============================
     layout
     =============================*/
@@ -267,10 +270,10 @@
 .choo {
   /* grid-area: choo; */
   max-width: 100%;
-  margin: .1em auto;
+  margin: 0.1em auto;
   /* margin: auto; */
   font-size: 5em;
-  font-family: 'Fredericka the Great', cursive;
+  font-family: "Fredericka the Great", cursive;
   -webkit-transition: 1s -webkit-transform;
   transition: 1s -webkit-transform;
   transition: 1s transform;
@@ -301,7 +304,7 @@
   -webkit-box-shadow: 0 9px #e8e8e8;
   box-shadow: 0 9px #e8e8e8;
   cursor: pointer;
-  font-family: 'Fredericka the Great', cursive;
+  font-family: "Fredericka the Great", cursive;
 }
 
 .search:active {
@@ -315,15 +318,15 @@
 .search p {
   font-size: 3em;
   font-weight: bold;
-  margin: .3em auto;
+  margin: 0.3em auto;
 }
 
 .search p:active,
 .search p:hover {
-  -webkit-transition: -webkit-transform .3s ease-in;
-  transition: -webkit-transform .3s ease-in;
-  transition: transform .3s ease-in;
-  transition: transform .3s ease-in, -webkit-transform .3s ease-in;
+  -webkit-transition: -webkit-transform 0.3s ease-in;
+  transition: -webkit-transform 0.3s ease-in;
+  transition: transform 0.3s ease-in;
+  transition: transform 0.3s ease-in, -webkit-transform 0.3s ease-in;
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
 }
@@ -359,7 +362,7 @@
   -webkit-box-pack: start;
   -ms-flex-pack: start;
   justify-content: flex-start;
-  font-family: 'Fredericka the Great', cursive;
+  font-family: "Fredericka the Great", cursive;
 }
 
 .footer a {
@@ -505,13 +508,11 @@ body {
     }
   }
 }
-
 @media (min-width: 1350px) {
   .sunrise {
     color: var(--clr-hover);
   }
 }
-
 #heart,
 #book,
 #music,
@@ -521,11 +522,11 @@ body {
 #codepen,
 #linkedin {
   color: var(--clr-light);
-  -webkit-transition: -webkit-transform .3s;
-  transition: -webkit-transform .3s;
-  transition: transform .3s;
-  transition: transform .3s, -webkit-transform .3s;
-  padding: .3em;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+  padding: 0.3em;
 }
 
 #heart:hover,
