@@ -14,10 +14,11 @@
 // }
 /*================================*/
 
-var red;
-var green;
-var blue;
-var rgbColor;
+let red;
+let green;
+let blue;
+let rgbColor;
+
 const randomColor = ()=> {
   for (var i = 0; i <=10; i += 1) {
   red = Math.floor(Math.random() * 256 );
@@ -28,6 +29,11 @@ const randomColor = ()=> {
   return rgbColor;
   }
 }
+
+//const github = document.getElementById('github'); //icons[4]
+github.addEventListener ('mouseover', () => {
+github.style.color = randomColor();
+});
 //---
 // const tarot = [
 //     'The Fool 愚人',
@@ -72,10 +78,6 @@ const randomColor = ()=> {
 
 
   
-//think about function, loop
-const github = document.getElementById('github'); //icons[4]
-github.addEventListener ('mouseover', () => {
-github.style.color = randomColor();
-});
+
 
 
